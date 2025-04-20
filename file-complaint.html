@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File a Complaint - Citizen Helpdesk</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">Citizen Helpdesk</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/file-complaint.html">File Complaint</a></li>
+                <li><a href="/view-complaints.html">View Complaints</a></li>
+                <li><a href="/complaint-status.html">Complaint Status</a></li>
+                <li><a href="/feedback.html">Feedback</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/login.html">Login</a></li>
+                <li><a href="/signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>File a New Complaint</h1>
+        <p class="mb-1">Please provide detailed information about your issue. This will help us address your complaint
+            effectively.</p>
+        <form id="complaintForm">
+            <div class="form-group">
+                <label for="user_name">Your Full Name:</label>
+                <input type="text" id="user_name" name="user_name" class="form-control" required
+                    placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email Address:</label>
+                <input type="email" id="email" name="email" class="form-control" required
+                    placeholder="Enter your valid email address">
+            </div>
+            <div class="form-group">
+                <label for="category">Category of Complaint:</label>
+                <select id="category" name="category" class="form-control" required>
+                    <option value="">-- Select a Category --</option>
+                    <option value="Roads">Roads and Infrastructure (Potholes, Street Lights, etc.)</option>
+                    <option value="Water">Water Supply and Sanitation (Leaks, No Supply, Drainage Issues)</option>
+                    <option value="Electricity">Electricity Issues (Power Outages, Faulty Wiring, Billing)</option>
+                    <option value="PublicSafety">Public Safety and Security (Theft, Harassment, Vandalism)</option>
+                    <option value="Garbage">Garbage and Waste Management (Collection, Disposal)</option>
+                    <option value="Environment">Environmental Concerns (Pollution, Illegal Logging)</option>
+                    <option value="Other">Other Issues</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Detailed Description of the Complaint:</label>
+                <textarea id="description" name="description" rows="7" class="form-control" required
+                    placeholder="Describe your issue in detail, including location, date, and any relevant information"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Complaint</button>
+        </form>
+        <div id="complaintMessage" class="mt-2"></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Citizen Helpdesk. All rights reserved.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

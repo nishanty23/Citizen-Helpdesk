@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provide Feedback - Citizen Helpdesk</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">Citizen Helpdesk</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/file-complaint.html">File Complaint</a></li>
+                <li><a href="/view-complaints.html">View Complaints</a></li>
+                <li><a href="/complaint-status.html">Complaint Status</a></li>
+                <li><a href="/feedback.html">Feedback</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/login.html">Login</a></li>
+                <li><a href="/signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>We Value Your Feedback</h1>
+        <p class="mb-1">Your opinions and suggestions are crucial in helping us improve our services. Please take a
+            moment to share your thoughts.</p>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Your Name (Optional):</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email (Optional):</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+                <label for="feedback">Your Feedback:</label>
+                <textarea id="feedback" name="feedback" rows="7" class="form-control" required
+                    placeholder="Please provide your feedback here"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        </form>
+        <div id="feedbackMessage" class="mt-2"></div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Citizen Helpdesk. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const feedbackForm = document.getElementById('feedbackForm');
+            const feedbackMessageDiv = document.getElementById('feedbackMessage');
+
+            if (feedbackForm && feedbackMessageDiv) {
+                feedbackForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const formData = new FormData(feedbackForm);
+                    const data = Object.fromEntries(formData.entries());
+
+                    try {
+                        // In a real application, you would send this data to a server endpoint
+                        console.log('Feedback submitted:', data);
+                        feedbackMessageDiv.textContent = 'Thank you for your feedback!';
+                        feedbackMessageDiv.className = 'message success';
+                        feedbackMessageDiv.style.display = 'block';
+                        feedbackForm.reset();
+                    } catch (error) {
+                        console.error('Error submitting feedback:', error);
+                        feedbackMessageDiv.textContent = 'Failed to submit feedback. Please try again later.';
+                        feedbackMessageDiv.className = 'message error';
+                        feedbackMessageDiv.style.display = 'block';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

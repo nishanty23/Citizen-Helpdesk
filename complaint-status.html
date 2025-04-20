@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Complaint Status - Citizen Helpdesk</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="/" class="logo">Citizen Helpdesk</a>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/file-complaint.html">File Complaint</a></li>
+                <li><a href="/view-complaints.html">View Complaints</a></li>
+                <li><a href="/complaint-status.html">Complaint Status</a></li>
+                <li><a href="/feedback.html">Feedback</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/login.html">Login</a></li>
+                <li><a href="/signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container complaint-status">
+        <h1>Check the Status of Your Complaint</h1>
+        <p class="mb-1">Enter your unique Complaint ID that you received upon submitting your issue.</p>
+        <form id="statusForm">
+            <div class="form-group">
+                <label for="id">Complaint ID:</label>
+                <input type="text" id="id" name="id" class="form-control" required
+                    placeholder="Enter your Complaint ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Check Status</button>
+        </form>
+        <div id="complaintDetails" class="mt-3">
+            <p class="text-center">Enter your Complaint ID and click 'Check Status' to see the details.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Citizen Helpdesk. All rights reserved.</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
